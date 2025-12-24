@@ -1,0 +1,203 @@
+.single-brand-area-banner-three{
+    .disc{  
+        font-size: 16px;
+        font-weight: 400;
+        color: #050D20;
+        line-height: 1.4;
+    }
+}
+.brand-area-banner-three-wrapper{
+    .single-brand-area{
+        img{
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        &:hover{
+            img{
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+.review-area-partner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media #{$mdsm-layout} {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+
+        img {
+            max-width: 178px;
+        }
+
+        .information {
+            font-family: var(--font-medium);
+            font-size: 16px;
+
+            p {
+                margin: 0;
+                color: var(--color-primary);
+            }
+        }
+    }
+
+    .mid {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        @media #{$large-mobile} {
+            flex-wrap: wrap;
+        }
+        .title {
+            font-size: 36px;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .info {
+            p {
+                margin: 0;
+                font-family: var(--font-medium);
+
+                span {
+                    color: var(--color-primary);
+                }
+            }
+        }
+    }
+
+    .end {
+        max-width: 201px;
+
+        p {
+            margin-left: auto;
+            margin-right: 0;
+        }
+    }
+}
+.large-iamage-partner{
+    .disc-1{
+        max-width: 959px;
+        margin: auto;
+        margin-top: 40px;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-lg-20 {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 20%;
+    }
+}
+.award-area-inner-page {
+    padding: 80px 110px;
+    background: linear-gradient(101.07deg, #F8FAFF 2.25%, #FDF8FF 85.45%);
+    text-align: center;
+
+    @media #{$sm-layout} {
+        padding: 60px 70px;
+    }
+
+    @media #{$large-mobile} {
+        padding: 40px;
+    }
+
+    .title {
+        font-weight: 500;
+        br {
+            @media #{$sm-layout} {
+                display: none;
+            }
+        }
+    }
+}
+
+.brand-area-wrapper-inner{
+    p.brand-title-agency{
+        text-transform: uppercase;
+        font-size: 20px;
+        padding-left: 30px;
+        position: relative;
+        color: #0C1018;
+        &::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 8px;
+            width: 8px;
+            background: var(--color-primary);
+            border-radius: 50%;
+        }
+    }
+}
+
+.mySwiper-digital-agency-brand{
+    .single-image{
+        padding: 15px 35px;
+        border-radius: 33px;
+        border: 1px solid #DFDBF9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: .4s;
+        &:hover{
+            border-color: var(--color-primary);
+        }
+    }
+}
+.brand-area-wrapper-app-development{
+    padding: 55px 160px;
+    text-align: center;
+    background: var(--color-primary);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    @media #{$mdsm-layout} {
+        padding: 25px;
+    }
+    &::after{
+        position: absolute;
+        left: 50%;
+        top: 42%;
+        transform: translate(-50%, 0%);
+        height: 927px;
+        width: 927px;
+        content: '';
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+        backdrop-filter: blur(10px);
+        z-index: -1;
+    }
+    *{
+        color: #fff;
+    }
+    .title{
+        font-size: 40px;
+        text-transform: capitalize;
+        @media #{$large-mobile} {
+            font-size: 22px;
+        }
+    }
+    .single-image{
+        padding: 0;
+        border: none;
+        img{
+            min-width: max-content;
+        }
+    }
+}

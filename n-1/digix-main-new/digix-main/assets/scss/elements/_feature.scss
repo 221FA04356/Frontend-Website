@@ -1,0 +1,142 @@
+
+.cyber-security-feature-right{
+ 
+    .top-thumbnail-area{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+    .bottom-thumbnail-area{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+}
+
+.fun-facts-area-wrapper-machine{
+    background-image: url(../images/facts/01.webp);
+    padding: 52px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .title{
+        color: #fff;
+        font-size: 40px;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+    p{
+        margin: 0;
+        font-size: 16px;
+        font-weight: 500;
+        color: #fff;
+    }
+}
+
+.rts-feature-main-wrapper-data{
+    background: #F9FAFF;
+    border: 1px solid #E0F2FF;
+    border-radius: 30px;
+    padding: 90px;
+}
+
+.rts-feature-area.inner{
+    background: #F9FAFF;
+    .rts-feature-main-wrapper-data{
+        background: none;
+        border-radius: 0;
+        border: none;
+    }
+}
+.feature-right-content-inner{
+    .feature-wrapper-list{
+        margin-bottom: 35px;
+        .single-feature{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            .content{
+                .title{
+                    margin-bottom: 5px;
+                }
+                p{
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+hr{
+    background-color: #c1d9f5;
+}
+
+.rts-feature-area.marketing{
+    .image-area{
+        img{
+            border-radius: 20px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+        }
+    }
+}
+
+.rts-feature-area-three.saas-landing{
+    .section-inner{
+        background: #F6F8FF;
+        border-radius: 20px;
+        padding: 10% 13%;
+    }
+    .title-left-wrapper .title, .title-center-wrapper .title{
+        font-size: 24px;
+        line-height: 1.2;
+    }
+    .bottom-button-area{
+        text-align: center;
+        margin-top: 50px;
+        .rts-btn{
+            margin: auto;
+            background: transparent;
+            
+        }
+    }
+}
+
+.rts-keyfeature-area.saas-landing {
+    .section-inner{
+        padding: 9% 8%;
+        background: linear-gradient(119.98deg, #615EFC 0.75%, #0C1018 99.25%);
+        border-radius: 20px;
+        .content-area{
+            display: flex;
+            gap: 30px;
+            .cyber-security-feature-right{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                .top-thumbnail-area,
+                .bottom-thumbnail-area{
+                    display: flex;
+                    gap: 30px;
+                }
+                .top-thumbnail-area{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .title-center-wrapper{
+        .pre{
+            color: var(--color-white);
+            border: 1px solid rgba(#EAF0FF, $alpha: .1);
+            svg{
+                path{
+                    fill: var(--color-white);
+                }
+            }
+        }
+        .title{
+            color: var(--color-white);
+        }
+    }
+}

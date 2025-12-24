@@ -1,0 +1,65 @@
+.faq-left-area-main {
+    p.disc {
+        margin-bottom: 20px;
+    }
+}
+
+.faq-sccordion-area-wrapper {
+    p.disc {
+        margin-bottom: 20px;
+    }
+}
+
+.rts-faq-area-inner {
+    background: linear-gradient(101.07deg, #F8FAFF 2.25%, #FDF8FF 85.45%);
+    .title-left-wrapper {
+        .title {
+            margin: 0;
+            margin-bottom: 30px;
+        }
+    }
+
+    .faq-sccordion-area-wrapper {
+        p.disc {
+            max-width: 90%;
+        }
+        .accordion-item{
+            background: transparent;
+        }
+    }
+}
+
+.container-faq{
+    max-width: 1070px;
+    margin: auto;
+    padding: 0 15px;
+}
+.accordon-pricing-wrapper-three.full-width{
+    max-width: 100%;
+    .accordion-item{
+        border: 1px solid #EAF0FF;
+        padding: 25px 30px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        button{
+            font-size: 20px !important;
+            padding: 0 !important;
+            @media #{$large-mobile} {
+                font-size: 16px !important;
+            }
+        }
+        .accordion-body{
+            overflow: 0 !important;
+        }
+    }
+}
+
+.accordon-pricing-wrapper-three.in-digital-agency{
+    .accordion-item{
+        background: transparent;
+    }
+}
+
+.body-bg-four{
+    background: #F8FBFF;
+}

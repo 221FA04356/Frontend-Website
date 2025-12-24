@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+  <defs><style>.main{font-family:Arial,sans-serif;font-weight:900;fill:#000}.tag{font-family:Arial,sans-serif;font-weight:400;letter-spacing:2px;fill:#000;text-transform:uppercase}</style></defs>
+  <g transform="translate(30,25) scale(1.4)">
+    <circle cx="50" cy="50" r="45" fill="none" stroke="#000" stroke-width="3"/>
+    <circle cx="50" cy="50" r="38" fill="none" stroke="#000" stroke-width="1.5"/>
+    <path d="M50 82 C40 82 30 70 35 55 C38 45 50 30 50 25 C50 30 62 45 65 55 C70 70 60 82 50 82Z" fill="#000"/>
+  </g>
+  <g transform="translate(190,0)">
+    <text x="0" y="100" font-size="70" class="main">NEURALTRIX</text>
+    <text x="470" y="100" font-size="70" class="main">AI</text>
+    <circle cx="347" cy="50" r="5" fill="#ff0000"/>
+    <text x="2" y="140" font-size="20" class="tag">Turning Vision Into Intelligent Solutions</text>
+  </g>
+</svg>
