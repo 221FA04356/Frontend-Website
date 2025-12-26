@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Enter OTP | SaaS</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+body{
+  height:100vh;
+  background:#f4f4f4;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* CARD */
+.container{
+  width:420px;
+  background:white;
+  border-radius:16px;
+  padding:40px;
+  box-shadow:0 30px 80px rgba(0,0,0,.2);
+}
+
+h2{
+  margin-bottom:10px;
+}
+
+p{
+  color:gray;
+  margin-bottom:20px;
+  font-size:14px;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  margin-bottom:14px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-size:15px;
+}
+
+/* BUTTON */
+button{
+  width:100%;
+  padding:14px;
+  background:black;
+  color:white;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:15px;
+  margin-top:10px;
+}
+
+.loading{
+  display:none;
+  text-align:center;
+  color:gray;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h2>Enter OTP</h2>
+  <p>OTP sent to the registered email</p>
+
+  <form id="enterOtpForm">
+    <input type="text" name="otp" placeholder="OTP" required>
+    <button type="submit">Verify OTP</button>
+  </form>
+
+  <div class="loading" id="loading">Validating user...</div>
+
+</div>
+
+<script>
+document.getElementById('enterOtpForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const loading = document.getElementById('loading');
+  loading.style.display = 'block';
+  // Simulate validation delay
+  setTimeout(() => {
+    // Assuming validation succeeds, redirect
+    window.location.href = 'reset-password.html';
+  }, 2000); // 2 seconds for demo
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login | SaaS</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI}
+body{
+  height:100vh;
+  background:#e9e9e9;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* BIGGER CONTAINER */
+.container{
+  width:1300px;
+  height:650px;
+  background:white;
+  display:flex;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 40px 90px rgba(0,0,0,.25);
+}
+
+/* LEFT */
+.avatars{
+  flex:1;
+  background:#f3f3f3;
+  display:flex;
+  justify-content:space-evenly;
+  align-items:flex-end;
+  padding-bottom:70px;
+}
+
+.avatar{
+  width:160px;
+}
+
+/* RIGHT */
+.login{
+  flex:1;
+  padding:90px 100px;
+}
+.login h2{
+  font-size:30px;
+  margin-bottom:12px;
+}
+.login p{
+  color:gray;
+  margin-bottom:35px;
+  font-size:16px;
+}
+.login input{
+  width:100%;
+  padding:14px;
+  margin-bottom:20px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-size:15px;
+}
+
+.login button{
+  width:100%;
+  padding:14px;
+  background:black;
+  color:white;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:15px;
+  margin-bottom:20px;
+}
+
+/* AUTH BUTTONS */
+.auth-buttons{
+  display:flex;
+  gap:15px;
+  margin-top:10px;
+}
+
+.auth-buttons button{
+  flex:1;
+  padding:12px;
+  background:white;
+  border:2px solid #e46033;
+  color:#e46033;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.auth-buttons button:hover{
+  background:#e46033;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- AVATARS -->
+<div class="avatars">
+
+<!-- ORANGE -->
+<svg class="avatar" viewBox="0 0 180 500">
+  <rect x="20" y="20" rx="0" ry="50" width="550" height="900" fill="#ff7a00"/>
+  <circle cx="75" cy="90" r="22" fill="white"/>
+  <circle cx="125" cy="90" r="22" fill="white"/>
+  <circle class="pupil" cx="75" cy="90" r="8" data-base-x="75" data-base-y="90"/>
+  <circle class="pupil" cx="125" cy="90" r="8" data-base-x="125" data-base-y="90"/>
+  <path d="M70 150 Q100 165 130 150" stroke="black" stroke-width="6" fill="none"/>
+</svg>
+
+<!-- PURPLE -->
+<svg class="avatar" viewBox="0 0 180 370">
+  <rect x="0" y="20" rx="0" ry="50" width="550" height="1000" fill="#6b3cff"/>
+  <circle cx="75" cy="90" r="22" fill="white"/>
+  <circle cx="125" cy="90" r="22" fill="white"/>
+  <circle class="pupil" cx="75" cy="90" r="8" data-base-x="75" data-base-y="90"/>
+  <circle class="pupil" cx="125" cy="90" r="8" data-base-x="125" data-base-y="90"/>
+  <path d="M70 150 Q100 165 130 150" stroke="black" stroke-width="6" fill="none"/>
+</svg>
+
+<!-- BLACK -->
+<svg class="avatar" viewBox="0 0 200 260">
+  <rect x="0" y="20" rx="0" ry="60" width="500" height="1000" fill="#111"/>
+  <circle cx="75" cy="90" r="22" fill="white"/>
+  <circle cx="125" cy="90" r="22" fill="white"/>
+  <circle class="pupil" cx="75" cy="90" r="8" data-base-x="75" data-base-y="90"/>
+  <circle class="pupil" cx="125" cy="90" r="8" data-base-x="125" data-base-y="90"/>
+  <path d="M70 150 Q100 165 130 150" stroke="white" stroke-width="6" fill="none"/>
+</svg>
+
+<!-- YELLOW -->
+<svg class="avatar" viewBox="0 0 180 390">
+  <rect x="0" y="20" rx="0" ry="60" width="550" height="1000" fill="#ffcc00"/>
+  <circle cx="75" cy="90" r="22" fill="white"/>
+  <circle cx="125" cy="90" r="22" fill="white"/>
+  <circle class="pupil" cx="75" cy="90" r="8" data-base-x="75" data-base-y="90"/>
+  <circle class="pupil" cx="125" cy="90" r="8" data-base-x="125" data-base-y="90"/>
+  <path d="M70 150 Q100 165 130 150" stroke="black" stroke-width="6" fill="none"/>
+</svg>
+
+</div>
+
+<!-- LOGIN -->
+<div class="login">
+  <h2>Login</h2>
+  <p>Login to access your SaaS platform</p>
+
+  <input id="user" placeholder="Email / Username">
+  <input id="pass" type="password" placeholder="Password">
+
+  <button>Login</button>
+
+  <div class="auth-buttons">
+    <button onclick="location.href='register.html'">Register</button>
+    <button onclick="location.href='forgot-password.html'">Forgot Password</button>
+  </div>
+</div>
+
+</div>
+
+<script>
+const pupils = document.querySelectorAll(".pupil");
+const pass = document.getElementById("pass");
+const MAX_OFFSET = 6;
+
+/* 👀 EYE FOLLOW (ONLY EYES MOVE) */
+document.addEventListener("mousemove", e=>{
+  pupils.forEach(p=>{
+    const baseX = +p.dataset.baseX;
+    const baseY = +p.dataset.baseY;
+    const svg = p.ownerSVGElement.getBoundingClientRect();
+
+    let dx = (e.clientX - (svg.left + svg.width/2)) / 35;
+    let dy = (e.clientY - (svg.top + svg.height/2)) / 35;
+
+    dx = Math.max(-MAX_OFFSET, Math.min(MAX_OFFSET, dx));
+    dy = Math.max(-MAX_OFFSET, Math.min(MAX_OFFSET, dy));
+
+    p.setAttribute("cx", baseX + dx);
+    p.setAttribute("cy", baseY + dy);
+  });
+});
+
+/* 🙈 PASSWORD → LOOK LEFT */
+pass.addEventListener("focus", ()=>{
+  pupils.forEach(p=>{
+    p.setAttribute("cx", +p.dataset.baseX - 8);
+    p.setAttribute("cy", p.dataset.baseY);
+  });
+});
+
+/* RESET */
+pass.addEventListener("blur", ()=>{
+  pupils.forEach(p=>{
+    p.setAttribute("cx", p.dataset.baseX);
+    p.setAttribute("cy", p.dataset.baseY);
+  });
+});
+</script>
+
+</body>
+</html>
