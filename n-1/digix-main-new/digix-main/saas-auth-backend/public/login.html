@@ -2,19 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Login | SaaS</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI}
+/* --- CORE STYLES --- */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}
+
 body{
   height:100vh;
   background:#e9e9e9;
   display:flex;
   justify-content:center;
   align-items:center;
+  overflow: hidden;
+  padding: 20px;
 }
 
-/* BIGGER CONTAINER */
 .container{
   width:1300px;
   height:650px;
@@ -23,9 +27,10 @@ body{
   border-radius:24px;
   overflow:hidden;
   box-shadow:0 40px 90px rgba(0,0,0,.25);
+  position: relative;
 }
 
-/* LEFT */
+/* LEFT SIDE: AVATARS */
 .avatars{
   flex:1;
   background:#f3f3f3;
@@ -35,51 +40,54 @@ body{
   padding-bottom:70px;
 }
 
-.avatar{
-  width:160px;
-}
+.avatar{ width:160px; }
 
-/* RIGHT */
+/* RIGHT SIDE: LOGIN FORM */
 .login{
   flex:1;
   padding:90px 100px;
-}
-.login h2{
-  font-size:30px;
-  margin-bottom:12px;
-}
-.login p{
-  color:gray;
-  margin-bottom:35px;
-  font-size:16px;
-}
-.login input{
-  width:100%;
-  padding:14px;
-  margin-bottom:20px;
-  border-radius:10px;
-  border:1px solid #ccc;
-  font-size:15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.login button{
+.login h2{ font-size:30px; margin-bottom:12px; }
+.login p{ color:gray; margin-bottom:35px; font-size:16px; }
+
+.login input{
   width:100%;
-  padding:14px;
+  padding:16px;
+  margin-bottom:20px;
+  border-radius:12px;
+  border: 1px solid #ccc;
+  font-size:16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.login input:focus {
+  border-color: #000;
+}
+
+.login button.login-btn{
+  width:100%;
+  padding:16px;
   background:black;
   color:white;
   border:none;
-  border-radius:10px;
+  border-radius:12px;
   cursor:pointer;
-  font-size:15px;
+  font-size:16px;
+  font-weight: 600;
   margin-bottom:20px;
+  transition: opacity 0.2s;
 }
 
-/* AUTH BUTTONS */
-.auth-buttons{
-  display:flex;
-  gap:15px;
-  margin-top:10px;
+.login button.login-btn:active {
+  opacity: 0.8;
 }
+
+.auth-buttons{ display:flex; gap:15px; margin-top:10px; }
 
 .auth-buttons button{
   flex:1;
@@ -90,119 +98,124 @@ body{
   border-radius:10px;
   cursor:pointer;
   font-weight:600;
+  font-size: 14px;
 }
 
-.auth-buttons button:hover{
-  background:#e46033;
-  color:white;
+.auth-buttons button:hover{ background:#e46033; color:white; }
+
+/* --- MOBILE OPTIMIZATION (NO NAV BAR) --- */
+@media (max-width: 1350px) {
+    .container { width: 95%; height: auto; min-height: 600px; }
+}
+
+@media (max-width: 991px) {
+    .avatars { display: none; } /* Hide characters on tablet/mobile to focus on form */
+    .login { padding: 60px 30px; }
+    .container { max-width: 450px; border-radius: 20px; }
+    .login h2 { font-size: 26px; text-align: center; }
+    .login p { text-align: center; font-size: 14px; }
+}
+
+@media (max-width: 480px) {
+    .auth-buttons { flex-direction: column; } /* Stack buttons on very small phones */
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
+        <div class="avatars">
+            <svg class="avatar" viewBox="0 0 180 500">
+                <rect x="20" y="20" rx="0" ry="50" width="550" height="900" fill="#ff7a00"/>
+                <circle cx="75" cy="90" r="22" fill="white"/>
+                <circle cx="125" cy="90" r="22" fill="white"/>
+                <circle class="pupil" cx="75" cy="90" r="8" data-base-x="75" data-base-y="90"/>
+                <circle class="pupil" cx="125" cy="90" r="8" data-base-x="125" data-base-y="90"/>
+                <path d="M70 150 Q100 165 130 150" stroke="black" stroke-width="6" fill="none"/>
+            </svg>
+            <svg class="avatar" viewBox="0 0 180 370">
+                <rect x="0" y="20" rx="0" ry="50" width="550" height="1000" fill="#6b3cff"/>
+                <circle cx="75" cy="90" r="22" fill="white"/>
+                <circle cx="125" cy="90" r="22" fill="white"/>
+                <circle class="pupil" cx="75" cy="90" r="8" data-base-x="75" data-base-y="90"/>
+                <circle class="pupil" cx="125" cy="90" r="8" data-base-x="125" data-base-y="90"/>
+                <path d="M70 150 Q100 165 130 150" stroke="black" stroke-width="6" fill="none"/>
+            </svg>
+            <svg class="avatar" viewBox="0 0 200 260">
+                <rect x="0" y="20" rx="0" ry="60" width="500" height="1000" fill="#111"/>
+                <circle cx="75" cy="90" r="22" fill="white"/>
+                <circle cx="125" cy="90" r="22" fill="white"/>
+                <circle class="pupil" cx="75" cy="90" r="8" data-base-x="75" data-base-y="90"/>
+                <circle class="pupil" cx="125" cy="90" r="8" data-base-x="125" data-base-y="90"/>
+                <path d="M70 150 Q100 165 130 150" stroke="white" stroke-width="6" fill="none"/>
+            </svg>
+            <svg class="avatar" viewBox="0 0 180 390">
+                <rect x="0" y="20" rx="0" ry="60" width="550" height="1000" fill="#ffcc00"/>
+                <circle cx="75" cy="90" r="22" fill="white"/>
+                <circle cx="125" cy="90" r="22" fill="white"/>
+                <circle class="pupil" cx="75" cy="90" r="8" data-base-x="75" data-base-y="90"/>
+                <circle class="pupil" cx="125" cy="90" r="8" data-base-x="125" data-base-y="90"/>
+                <path d="M70 150 Q100 165 130 150" stroke="black" stroke-width="6" fill="none"/>
+            </svg>
+        </div>
 
-<!-- AVATARS -->
-<div class="avatars">
-
-<!-- ORANGE -->
-<svg class="avatar" viewBox="0 0 180 500">
-  <rect x="20" y="20" rx="0" ry="50" width="550" height="900" fill="#ff7a00"/>
-  <circle cx="75" cy="90" r="22" fill="white"/>
-  <circle cx="125" cy="90" r="22" fill="white"/>
-  <circle class="pupil" cx="75" cy="90" r="8" data-base-x="75" data-base-y="90"/>
-  <circle class="pupil" cx="125" cy="90" r="8" data-base-x="125" data-base-y="90"/>
-  <path d="M70 150 Q100 165 130 150" stroke="black" stroke-width="6" fill="none"/>
-</svg>
-
-<!-- PURPLE -->
-<svg class="avatar" viewBox="0 0 180 370">
-  <rect x="0" y="20" rx="0" ry="50" width="550" height="1000" fill="#6b3cff"/>
-  <circle cx="75" cy="90" r="22" fill="white"/>
-  <circle cx="125" cy="90" r="22" fill="white"/>
-  <circle class="pupil" cx="75" cy="90" r="8" data-base-x="75" data-base-y="90"/>
-  <circle class="pupil" cx="125" cy="90" r="8" data-base-x="125" data-base-y="90"/>
-  <path d="M70 150 Q100 165 130 150" stroke="black" stroke-width="6" fill="none"/>
-</svg>
-
-<!-- BLACK -->
-<svg class="avatar" viewBox="0 0 200 260">
-  <rect x="0" y="20" rx="0" ry="60" width="500" height="1000" fill="#111"/>
-  <circle cx="75" cy="90" r="22" fill="white"/>
-  <circle cx="125" cy="90" r="22" fill="white"/>
-  <circle class="pupil" cx="75" cy="90" r="8" data-base-x="75" data-base-y="90"/>
-  <circle class="pupil" cx="125" cy="90" r="8" data-base-x="125" data-base-y="90"/>
-  <path d="M70 150 Q100 165 130 150" stroke="white" stroke-width="6" fill="none"/>
-</svg>
-
-<!-- YELLOW -->
-<svg class="avatar" viewBox="0 0 180 390">
-  <rect x="0" y="20" rx="0" ry="60" width="550" height="1000" fill="#ffcc00"/>
-  <circle cx="75" cy="90" r="22" fill="white"/>
-  <circle cx="125" cy="90" r="22" fill="white"/>
-  <circle class="pupil" cx="75" cy="90" r="8" data-base-x="75" data-base-y="90"/>
-  <circle class="pupil" cx="125" cy="90" r="8" data-base-x="125" data-base-y="90"/>
-  <path d="M70 150 Q100 165 130 150" stroke="black" stroke-width="6" fill="none"/>
-</svg>
-
-</div>
-
-<!-- LOGIN -->
-<div class="login">
-  <h2>Login</h2>
-  <p>Login to access your SaaS platform</p>
-
-  <input id="user" placeholder="Email / Username">
-  <input id="pass" type="password" placeholder="Password">
-
-  <button>Login</button>
-
-  <div class="auth-buttons">
-    <button onclick="location.href='register.html'">Register</button>
-    <button onclick="location.href='forgot-password.html'">Forgot Password</button>
-  </div>
-</div>
-
-</div>
+        <div class="login">
+            <h2>Login</h2>
+            <p>Login to access your SaaS platform</p>
+            <form id="loginForm">
+                <input id="user" type="text" placeholder="Email / Username" required autocomplete="username">
+                <input id="pass" type="password" placeholder="Password" required autocomplete="current-password">
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <div class="auth-buttons">
+                <button type="button" onclick="window.location.href='register.html'">Register</button>
+                <button type="button" onclick="window.location.href='forgot-password.html'">Forgot Password</button>
+            </div>
+        </div>
+    </div>
 
 <script>
+/* --- EYE LOGIC --- */
 const pupils = document.querySelectorAll(".pupil");
-const pass = document.getElementById("pass");
+const passInput = document.getElementById("pass");
 const MAX_OFFSET = 6;
 
-/* 👀 EYE FOLLOW (ONLY EYES MOVE) */
-document.addEventListener("mousemove", e=>{
-  pupils.forEach(p=>{
-    const baseX = +p.dataset.baseX;
-    const baseY = +p.dataset.baseY;
-    const svg = p.ownerSVGElement.getBoundingClientRect();
-
-    let dx = (e.clientX - (svg.left + svg.width/2)) / 35;
-    let dy = (e.clientY - (svg.top + svg.height/2)) / 35;
-
-    dx = Math.max(-MAX_OFFSET, Math.min(MAX_OFFSET, dx));
-    dy = Math.max(-MAX_OFFSET, Math.min(MAX_OFFSET, dy));
-
-    p.setAttribute("cx", baseX + dx);
-    p.setAttribute("cy", baseY + dy);
+if (pupils.length && passInput) {
+  document.addEventListener("mousemove", e => {
+      pupils.forEach(p => {
+          const baseX = Number(p.dataset.baseX) || 0;
+          const baseY = Number(p.dataset.baseY) || 0;
+          const svg = p.ownerSVGElement.getBoundingClientRect();
+          let dx = (e.clientX - (svg.left + svg.width/2)) / 35;
+          let dy = (e.clientY - (svg.top + svg.height/2)) / 35;
+          dx = Math.max(-MAX_OFFSET, Math.min(MAX_OFFSET, dx));
+          dy = Math.max(-MAX_OFFSET, Math.min(MAX_OFFSET, dy));
+          p.setAttribute("cx", baseX + dx);
+          p.setAttribute("cy", baseY + dy);
+      });
   });
-});
 
-/* 🙈 PASSWORD → LOOK LEFT */
-pass.addEventListener("focus", ()=>{
-  pupils.forEach(p=>{
-    p.setAttribute("cx", +p.dataset.baseX - 8);
-    p.setAttribute("cy", p.dataset.baseY);
+  // Eyes look left when focusing on password
+  passInput.addEventListener("focus", () => {
+      pupils.forEach(p => {
+          p.setAttribute("cx", Number(p.dataset.baseX) - 8);
+          p.setAttribute("cy", p.dataset.baseY);
+      });
   });
-});
 
-/* RESET */
-pass.addEventListener("blur", ()=>{
-  pupils.forEach(p=>{
-    p.setAttribute("cx", p.dataset.baseX);
-    p.setAttribute("cy", p.dataset.baseY);
+  passInput.addEventListener("blur", () => {
+      pupils.forEach(p => {
+          p.setAttribute("cx", p.dataset.baseX);
+          p.setAttribute("cy", p.dataset.baseY);
+      });
   });
+}
+
+// Handle Login Form Submission
+document.getElementById('loginForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    // Action for login button
 });
 </script>
 

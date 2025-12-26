@@ -2,379 +2,246 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Register | SaaS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Reset Password | SaaS</title>
 
 <style>
+/* --- CORE STYLES --- */
+:root {
+    --primary: #000;
+    --bg: #f4f4f4;
+    --gray: #6c757d;
+}
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Segoe UI, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body{
-  height:100vh;
-  background:#f4f4f4;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+    min-height: 100vh;
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
+/* MOBILE-OPTIMIZED CONTAINER */
 .container{
-  width:1200px;
-  height:650px;
-  background:white;
-  display:flex;
-  border-radius:20px;
-  overflow:hidden;
-  box-shadow:0 30px 80px rgba(0,0,0,.2);
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border-radius: 18px;
+    padding: 40px 30px;
+    box-shadow: 0 25px 60px rgba(0,0,0,.1);
+    text-align: center;
+    position: relative;
 }
 
-/* LEFT */
-.visual{
-  flex:1;
-  background:#eee;
-}
-.visual iframe{
-  width:100%;
-  height:100%;
-  border:none;
+h2{ 
+    font-size: 26px;
+    margin-bottom: 10px; 
+    font-weight: 700;
 }
 
-/* RIGHT */
-.form{
-  flex:1;
-  padding:60px 80px;
+p{
+    color: var(--gray);
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-.form h2{
-  margin-bottom:25px;
+/* INPUT STYLING */
+input{
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 14px;
+    border-radius: 12px;
+    border: 2px solid #eee;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background: #fafafa;
 }
 
-.form input{
-  width:100%;
-  padding:14px;
-  margin-bottom:14px;
-  border-radius:10px;
-  border:1px solid #ccc;
-  font-size:15px;
+input:focus {
+    border-color: var(--primary);
+    background: #fff;
 }
 
-.row{
-  display:flex;
-  gap:12px;
-}
-
-.row input{ flex:1 }
-
-/* PHONE */
-.phone-row{
-  display:flex;
-  gap:12px;
-}
-
-/* COUNTRY DROPDOWN */
-.country-select{
-  position:relative;
-  width:120px;
-}
-
-.selected{
-  padding:14px;
-  border:1px solid #ccc;
-  border-radius:10px;
-  cursor:pointer;
-  background:white;
-  font-size:14px;
-}
-
-.dropdown{
-  position:absolute;
-  top:110%;
-  left:0;
-  width:240px;
-  background:white;
-  border-radius:12px;
-  box-shadow:0 20px 50px rgba(0,0,0,.25);
-  display:none;
-  z-index:999;
-}
-
-.search{
-  width:100%;
-  padding:12px;
-  border:none;
-  border-bottom:1px solid #ddd;
-  outline:none;
-}
-
-.options{
-  max-height:200px;
-  overflow-y:auto;
-}
-
-.option{
-  padding:12px;
-  cursor:pointer;
-  font-size:14px;
-}
-.option:hover{ background:#f1f1f1 }
-
-.phone-row input{ flex:1 }
-
-/* PASSWORD */
-.password-box{
-  position:relative;
-}
-
-.password-box input{
-  padding-right:45px;
-}
+/* PASSWORD BOX POSITIONS */
+.password-box{ position:relative; }
+.password-box input{ padding-right:50px; }
 
 .eye{
-  position:absolute;
-  right:14px;
-  top:50%;
-  transform:translateY(-50%);
-  cursor:pointer;
-  font-size:18px;
+    position:absolute;
+    right:14px;
+    top:25px; /* Centered relative to larger 16px padding input */
+    transform:translateY(-50%);
+    cursor:pointer;
+    font-size:18px;
+    background:transparent;
+    border:none;
+    padding:5px;
 }
 
-/* TOOLTIP */
-.tooltip{
-  position:absolute;
-  top:110%;
-  left:0;
-  width:260px;
-  background:#111;
-  color:white;
-  padding:12px;
-  border-radius:10px;
-  font-size:13px;
-  display:none;
-  z-index:10;
-}
-
-.password-box:hover .tooltip,
-.password-box:focus-within .tooltip{
-  display:block;
-}
-
-.tooltip ul{
-  padding-left:18px;
-  margin-top:6px;
-}
-
-/* STRENGTH BAR */
-.strength{
-  width:100%;
-  height:6px;
-  background:#eee;
-  border-radius:6px;
-  margin:-6px 0 14px;
-  overflow:hidden;
-}
-
-#strengthBar{
-  height:100%;
-  width:0%;
-  background:red;
-  transition:all .3s ease;
-}
-
-/* ERRORS */
+/* ERROR & SHAKE */
 small{
-  display:block;
-  margin-top:-10px;
-  margin-bottom:12px;
-  color:#d9534f;
-  font-size:13px;
+    display:block;
+    margin-top:-8px;
+    margin-bottom:12px;
+    color:#d9534f;
+    font-size:13px;
+    text-align: left;
 }
 
-/* SHAKE */
 @keyframes shake{
-  0%{transform:translateX(0)}
-  25%{transform:translateX(-6px)}
-  50%{transform:translateX(6px)}
-  75%{transform:translateX(-6px)}
-  100%{transform:translateX(0)}
+    0%{transform:translateX(0)}
+    25%{transform:translateX(-6px)}
+    50%{transform:translateX(6px)}
+    75%{transform:translateX(-6px)}
+    100%{transform:translateX(0)}
 }
 .shake{ animation:shake .35s }
 
-/* BUTTON */
-button{
-  width:100%;
-  padding:14px;
-  background:black;
-  color:white;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-  font-size:15px;
-  margin-top:10px;
+/* BUTTONS */
+button[type="submit"], .login-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: opacity 0.2s, transform 0.1s;
 }
 
-p{ margin-top:20px }
+button:active {
+    transform: scale(0.98);
+}
+
+.success{
+    display:none;
+    text-align:center;
+    color:green;
+    font-size:16px;
+    margin-top:20px;
+    font-weight: 600;
+}
+
+.login-btn{
+    display:none;
+    margin-top:10px;
+}
+
+/* Screen Fixes */
+@media (max-width: 380px) {
+    .container { padding: 30px 20px; }
+    h2 { font-size: 22px; }
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
+        <h2>Reset Password</h2>
+        <p>Enter a new password</p>
 
-  <!-- LEFT -->
-  <div class="visual">
-    <iframe src="https://my.spline.design/nexbotrobotcharacterconcept-ovRMDtD5vHraad8zsT9DG0Fz/"></iframe>
-  </div>
-
-  <!-- RIGHT -->
-  <div class="form">
-    <h2>Create Account</h2>
-
-    <form onsubmit="return validateForm()">
-
-      <div class="row">
-        <input type="text" placeholder="First Name" required>
-        <input type="text" placeholder="Last Name" required>
-      </div>
-
-      <div class="row">
-        <input type="email" placeholder="Email" required>
-        <input type="text" placeholder="OTP" required>
-      </div>
-
-      <div class="phone-row">
-        <div class="country-select">
-          <div class="selected" id="selectedCountry">🇮🇳 +91</div>
-          <input type="hidden" id="countryCode" value="+91">
-
-          <div class="dropdown">
-            <input type="text" class="search" placeholder="Search country">
-            <div class="options">
-              <div class="option" data-code="+91">🇮🇳 India (+91)</div>
-              <div class="option" data-code="+1">🇺🇸 USA (+1)</div>
-              <div class="option" data-code="+44">🇬🇧 UK (+44)</div>
-              <div class="option" data-code="+61">🇦🇺 Australia (+61)</div>
-              <div class="option" data-code="+81">🇯🇵 Japan (+81)</div>
-              <div class="option" data-code="+49">🇩🇪 Germany (+49)</div>
-              <div class="option" data-code="+33">🇫🇷 France (+33)</div>
-              <div class="option" data-code="+971">🇦🇪 UAE (+971)</div>
-            </div>
+        <form id="resetForm">
+          <div class="password-box">
+            <input type="password" id="newPassword" placeholder="New Password" required autocomplete="new-password">
+            <button type="button" class="eye" data-target="newPassword">👁️</button>
           </div>
-        </div>
+          <small id="newError"></small>
 
-        <input type="text" placeholder="Phone Number" required>
-      </div>
+          <div class="password-box">
+            <input type="password" id="confirmPassword" placeholder="Re-enter Password" required autocomplete="new-password">
+            <button type="button" class="eye" data-target="confirmPassword">👁️</button>
+          </div>
+          <small id="confirmError"></small>
 
-      <!-- PASSWORD -->
-      <div class="password-box">
-        <input type="password" id="password" placeholder="Password" oninput="checkStrength()" required>
-        <span class="eye" onclick="togglePassword('password',this)">👁️</span>
+          <button type="submit">Confirm</button>
+        </form>
 
-        <div class="tooltip">
-          Password rules:
-          <ul>
-            <li>8–16 characters</li>
-            <li>Letters & numbers only</li>
-            <li>No spaces</li>
-            <li>No special characters</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="strength"><div id="strengthBar"></div></div>
-      <small id="passError"></small>
-
-      <div class="password-box">
-        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
-        <span class="eye" onclick="togglePassword('confirmPassword',this)">👁️</span>
-      </div>
-      <small id="confirmError"></small>
-
-      <button type="submit">Register</button>
-    </form>
-
-    <p>Already have an account? <a href="login.html">Login</a></p>
-  </div>
-
-</div>
+        <div class="success" id="successMsg">Password reset successful!</div>
+        <button class="login-btn" id="loginBtn">Go to Login</button>
+    </div>
 
 <script>
-/* COUNTRY SEARCH */
-const select=document.querySelector(".country-select");
-const selected=document.getElementById("selectedCountry");
-const dropdown=select.querySelector(".dropdown");
-const search=select.querySelector(".search");
-const options=select.querySelectorAll(".option");
-
-selected.onclick=()=>{
-  dropdown.style.display=dropdown.style.display==="block"?"none":"block";
-  search.value="";
-  search.focus();
-};
-
-options.forEach(o=>{
-  o.onclick=()=>{
-    selected.textContent=o.textContent.split(" (")[0]+" "+o.dataset.code;
-    dropdown.style.display="none";
-  };
-});
-
-search.oninput=e=>{
-  options.forEach(o=>{
-    o.style.display=o.textContent.toLowerCase().includes(e.target.value.toLowerCase())?"block":"none";
-  });
-};
-
-document.addEventListener("click",e=>{
-  if(!select.contains(e.target)) dropdown.style.display="none";
-});
-
-/* EYE TOGGLE */
-function togglePassword(id,el){
-  const i=document.getElementById(id);
-  if(i.type==="password"){ i.type="text"; el.textContent="🙈"; }
-  else{ i.type="password"; el.textContent="👁️"; }
+/* EYE TOGGLE LOGIC */
+function toggle(id, el){
+    const i = document.getElementById(id);
+    if (!i) return;
+    if (i.type === "password"){
+        i.type = "text";
+        el.textContent = "🙈";
+    } else {
+        i.type = "password";
+        el.textContent = "👁️";
+    }
 }
 
-/* STRENGTH */
-function checkStrength(){
-  const p=document.getElementById("password").value;
-  const bar=document.getElementById("strengthBar");
-  let s=0;
-  if(p.length>=8) s++;
-  if(/[a-zA-Z]/.test(p)) s++;
-  if(/[0-9]/.test(p)) s++;
-  if(p.length>=12) s++;
+document.querySelectorAll('.eye').forEach(el => {
+    el.addEventListener('click', () => {
+        const target = el.getAttribute('data-target');
+        if (target) toggle(target, el);
+    });
+});
 
-  bar.style.width=[0,25,50,75,100][s]+"%";
-  bar.style.background=["red","red","orange","#f0ad4e","green"][s];
+/* VALIDATION LOGIC */
+function validateReset(){
+    const pass = document.getElementById("newPassword");
+    const confirm = document.getElementById("confirmPassword");
+    const ne = document.getElementById("newError");
+    const ce = document.getElementById("confirmError");
+
+    ne.textContent = ""; ce.textContent = "";
+    const bad = /[^a-zA-Z0-9]/;
+
+    if (pass.value.length < 8 || pass.value.length > 16 || bad.test(pass.value)){
+        ne.textContent = "Use 8–16 alphanumeric characters.";
+        shake(pass);
+        return;
+    }
+
+    if (pass.value !== confirm.value){
+        ce.textContent = "Passwords do not match.";
+        shake(confirm);
+        return;
+    }
+
+    // Success UI State
+    document.getElementById('resetForm').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+    document.getElementById('loginBtn').style.display = 'block';
 }
 
-/* VALIDATION */
-function validateForm(){
-  const pass=document.getElementById("password");
-  const confirm=document.getElementById("confirmPassword");
-  const pe=document.getElementById("passError");
-  const ce=document.getElementById("confirmError");
+function shake(el){
+    el.classList.add("shake");
+    setTimeout(()=>el.classList.remove("shake"),350);
+}
 
-  pe.textContent=""; ce.textContent="";
-  const bad=/[^a-zA-Z0-9]/;
+const resetFormEl = document.getElementById('resetForm');
+if (resetFormEl) {
+    resetFormEl.addEventListener('submit', (e) => {
+        e.preventDefault();
+        validateReset();
+    });
+}
 
-  if(pass.value.length<8||pass.value.length>16||bad.test(pass.value)){
-    pe.textContent="Invalid password";
-    pass.classList.add("shake");
-    setTimeout(()=>pass.classList.remove("shake"),350);
-    return false;
-  }
-
-  if(pass.value!==confirm.value){
-    ce.textContent="Passwords do not match";
-    confirm.classList.add("shake");
-    setTimeout(()=>confirm.classList.remove("shake"),350);
-    return false;
-  }
-  return true;
+const loginBtnEl = document.getElementById('loginBtn');
+if (loginBtnEl) {
+    loginBtnEl.addEventListener('click', () => {
+        window.location.href = 'login.html';
+    });
 }
 </script>
 
