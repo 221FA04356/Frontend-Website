@@ -1,0 +1,347 @@
+.career-banner-wrapper {
+    .title {
+        font-size: 56px;
+        font-weight: 500;
+
+        @media #{$smlg-device} {
+            font-size: 42px;
+        }
+
+        @media #{$mdsm-layout} {
+            font-size: 44px;
+        }
+
+        @media #{$sm-layout} {
+            font-size: 28px;
+        }
+
+        @media #{$small-mobile} {
+            font-size: 24px;
+        }
+    }
+}
+
+.career-two-section {
+    .check-wrapper-main {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+
+        @media #{$large-mobile} {
+            gap: 0;
+            flex-wrap: wrap;
+        }
+
+        .single-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 15px 0;
+        }
+    }
+}
+
+.career-video-area-large {
+    height: 600px;
+    border-radius: 10px !important;
+    background-image: url(../images/career/03.webp);
+
+    @media #{$small-mobile} {
+        height: 300px;
+    }
+
+    .jarallax-container {
+        border-radius: 10px !important;
+    }
+}
+
+.single-values-in-action {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 36px 30px;
+    border-radius: 10px;
+    border: 1px solid #EAF0FF;
+    transition: .4s;
+
+    @media #{$large-mobile} {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .icon {
+        min-width: max-content;
+    }
+
+    .information {
+        .title {
+            font-weight: 500;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &:hover {
+        border-color: var(--color-primary);
+    }
+}
+
+.single-job-opening-card {
+    border: 1px solid #DFDBF9;
+    padding: 40px;
+    transition: .3s;
+    border-radius: 10px;
+
+    @media #{$sm-layout} {
+        padding: 25px;
+    }
+
+    &:hover {
+        border: 1px solid var(--color-primary);
+    }
+
+    .title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin-bottom: 15px;
+
+        span {
+            font-weight: 500;
+            font-size: 20px;
+            color: #050D20;
+        }
+    }
+
+    .tag-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        @media #{$large-mobile} {
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        span {
+            display: block;
+            border-radius: 20px;
+            border: 1px solid #DFDBF9;
+            padding: 5px 16px;
+        }
+    }
+
+    .bottom-area {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+
+        @media #{$sm-layout} {
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .selary-range {
+            padding: 5px 15px;
+            background: #EAF0FF;
+            border-radius: 5px;
+
+            p {
+                font-weight: 600;
+                font-size: 20px;
+
+                span {
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+
+.faq-why-choose-left-accordion {
+    p {
+        margin-bottom: 20px;
+    }
+
+    .accordion {
+        background: transparent;
+        max-width: 80%;
+
+        @media #{$mdsm-layout} {
+            max-width: 100%;
+        }
+
+        .accordion-item {
+            background-color: transparent;
+            background: transparent;
+            border: none;
+            padding-left: 0;
+            padding-right: 0;
+            border-bottom: 1px solid #EAF0FF;
+            padding: 7px 0;
+
+            .accordion-header {
+                background: transparent;
+
+                button {
+                    background: transparent;
+                    font-size: 18px;
+                    color: #0C1018;
+                    border-bottom: none;
+                    box-shadow: none;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+
+        .accordion-body {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.career-page-single-banner {
+
+    span.pre {
+        color: var(--color-primary);
+        font-size: 20px;
+    }
+
+    h1.title {
+        font-size: 56px;
+        margin-bottom: 15px;
+
+        @media #{$sm-layout} {
+            font-size: 44px;
+        }
+
+        @media #{$large-mobile} {
+            font-size: 36px;
+        }
+    }
+
+    .title {
+        font-size: 32px;
+        font-weight: 500;
+        span {
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    .single-career-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        margin-top: 30px;
+
+        @media #{$large-mobile} {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+
+        }
+
+        .single {
+            .title {
+                margin-bottom: 5px;
+                font-size: 22px;
+                font-weight: 500;
+            }
+
+            span {
+                color: rgba(0, 0, 0, 0.4);
+            }
+        }
+    }
+}
+.apply-right-area-sticky {
+    height: 100%;
+
+    .sticky-inner {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 50px;
+        /* required */
+    }
+}
+.apply-now-card {
+    padding: 45px;
+    margin-top: -200px;
+    background: #fff;
+    border: 1px solid #EAF0FF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+
+    @media #{$mdsm-layout} {
+        margin-top: 0;
+    }
+
+    @media #{$large-mobile} {
+        padding: 45px 25px;
+    }
+
+    .pre {
+        color: #717383;
+    }
+
+    a.rts-btn {
+        max-width: 100%;
+        justify-content: center;
+        margin-top: 22px;
+        margin-bottom: 22px;
+
+        &:hover {
+            &::after {
+                transform: scaleX(5) scaleY(5);
+            }
+        }
+    }
+
+    p {
+        margin-bottom: 18px;
+        color: #717383;
+
+        a {
+            font-weight: 600;
+            color: #141414;
+        }
+    }
+}
+
+.apply-bottom-wrapper {
+    margin-top: 60px;
+
+    .benefits-wrapper-card {
+        .single {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 5px 0;
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
+.career-single-page{
+    overflow-x: visible !important;
+}
+.left-career-single{
+    .title{
+        font-weight: 500;
+    }
+}

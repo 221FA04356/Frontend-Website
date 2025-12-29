@@ -1,0 +1,112 @@
+.rts-btn {
+    padding: 16px 37px;
+    font-size: 16px;
+    line-height: 1;
+    max-width: max-content;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    z-index: 1;
+    transition: .8s;
+    font-weight: 600;
+    min-width: max-content;
+
+    &.btn-primary {
+        background: var(--color-primary);
+
+        &::after {
+            content: "";
+            position: absolute;
+            -webkit-transition-duration: 800ms;
+            transition-duration: 800ms;
+            width: 200%;
+            height: 200%;
+            top: 110%;
+            left: 50%;
+            background: #F2F2F2;
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
+            transform: translateX(-50%);
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -o-border-radius: 50%;
+            -ms-border-radius: 50%;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        &:hover {
+            color: #050D20;
+
+            &::after {
+                top: -40%;
+            }
+        }
+
+        &.btn-white {
+            background: #fff;
+            color: #050D20;
+
+            &:hover {
+                color: #fff;
+
+                &::after {
+                    background: var(--color-primary);
+                }
+            }
+        }
+    }
+    &.btn-border{
+        border: 1px solid var(--color-primary);
+        color: var(--color-primary);
+        background: var(--color-white);
+        &::after{
+            background: var(--color-primary);
+        }
+        &:hover{
+            color: var(--color-white);
+        }
+    }
+}
+
+a.btn-line {
+    color: #050D20;
+    position: relative;
+    font-size: 16px;
+    transition: .3s;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    gap: 7px;
+    max-width: max-content;
+    span{
+        margin-bottom: 0 !important;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        text-decoration-thickness: 2px;
+    }
+    i{
+        line-height: 1;
+    }
+    // &::after {
+    //     position: absolute;
+    //     bottom: -2px;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 2px;
+    //     width: 100%;
+    //     background: #050D20;
+    //     content: '';
+    // }
+
+    &:hover {
+        color: var(--color-primary);
+
+        &::after {
+            background: var(--color-primary);
+        }
+    }
+}

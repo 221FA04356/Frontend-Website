@@ -1,0 +1,149 @@
+.nav-area {
+    @media #{$smlg-device} {
+        display: none;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        @media #{$laptop-device} {
+            gap: 40px;
+        }
+
+        @media screen and (max-width: 1300px) {
+            gap: 35px;
+        }
+
+        li {
+            margin: 0;
+            padding: 0;
+
+            a {
+                font-weight: 600 !important;
+            }
+        }
+    }
+}
+
+header.header-three {
+    .nav-area ul {
+        @media #{$laptop-device} {
+            gap: 25px !important;
+        }
+    }
+}
+
+header.header-five {
+    .header-top-area {
+        @media #{$smlg-device} {
+            display: none;
+        }
+    }
+
+    .nav-area ul {
+        @media #{$laptop-device} {
+            gap: 25px !important;
+        }
+    }
+}
+
+.header-bottom-five-wrapper {
+    .logo-hide-show {
+        display: none;
+
+        @media #{$smlg-device} {
+            display: block;
+        }
+    }
+}
+
+.has-dropdown.mega-menu>a {
+    position: relative;
+    color: #fff;
+}
+
+.has-dropdown::after {
+    position: absolute;
+    content: "\f078";
+    right: -22px;
+    top: 51%;
+    transform: translateY(-50%);
+    font-weight: 400;
+    color: #ffffff;
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.has-dropdown.mega-menu>a::after {
+    position: absolute;
+    content: "\f078";
+    right: -22px;
+    top: 53%;
+    transform: translateY(-50%);
+    font-weight: 400;
+    color: #ffffff;
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.nav-area ul li.main-nav {
+    padding: 0 0;
+    cursor: pointer;
+}
+
+header .main-nav>a {
+    color: #fff;
+}
+
+header.header-two {
+    .nav-area ul {
+        @media #{$laptop-device} {
+            gap: 40px !important;
+        }
+    }
+}
+
+header.header-five {
+    .nav-area ul {
+        @media #{$laptop-device} {
+            gap: 40px !important;
+        }
+    }
+}
+
+.submenu {
+    &:hover {
+        li {
+            a {
+                opacity: .6;
+            }
+        }
+    }
+}
+
+.mega-menu-item.with-list li a {
+    position: relative;
+
+    span {
+        padding: 3px 9px;
+        border-radius: 33px;
+        background: var(--color-primary);
+        color: #fff;
+        line-height: 1;
+        font-size: 14px;
+        transition: .3s;
+    }
+
+    &:hover {
+        span {
+            margin-left: 20px;
+        }
+    }
+}

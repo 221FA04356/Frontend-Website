@@ -1,0 +1,97 @@
+/* Video Security Styles for Blog Pages */
+
+/* Session Timer */
+#session-timer {
+  position: fixed;
+  top: 12px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  z-index: 10000;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#session-timer #time {
+  color: #ffd700;
+  font-weight: 700;
+}
+
+/* Watermark */
+#watermark {
+  position: fixed;
+  font-size: 38px;
+  color: rgba(255, 215, 0, 0.28);
+  transform: rotate(-25deg);
+  pointer-events: none;
+  z-index: 9999;
+  white-space: pre-line;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Global Blur Overlay (Recording + Screenshot) */
+#blurOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  background: rgba(0, 0, 0, 0.25);
+  display: none;
+}
+
+/* Video Wrapper Styles */
+.video-security-wrapper {
+  position: relative;
+  margin: 30px 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 0 45px rgba(255, 215, 0, 0.45);
+}
+
+.video-security-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  pointer-events: auto;
+}
+
+/* Prevent text selection on video area */
+.video-security-wrapper {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Security Notice */
+.security-notice {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 8px;
+  padding: 15px;
+  margin: 20px 0;
+  color: #ffd700;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #session-timer {
+    top: 8px;
+    right: 10px;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  #watermark {
+    font-size: 24px;
+  }
+}
+

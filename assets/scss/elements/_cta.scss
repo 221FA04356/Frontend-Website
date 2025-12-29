@@ -1,0 +1,141 @@
+.call-to-action-wrapper-three{
+    background-image: url(../images/cta/01.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 30px;
+    border-radius: 20px;
+    text-align: center;
+    &.in-primary-bg{
+        background-image: none;
+        background: var(--color-primary);
+    }
+    .title{
+        font-size: 40px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 20px;
+        @media #{$large-mobile} {
+            line-height: 1.3;
+            font-size: 28px;
+        }
+    }
+    p.disc{
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        margin-bottom: 40px;
+    }
+    .rts-btn{
+        margin: auto;
+    }
+    &.marketing{
+        position: relative;
+        z-index: 1;
+        .round{
+            position: absolute;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 50%;
+            border: 1px solid rgba(233, 243, 255, 0.05);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 202px;
+            height: 202px;
+            animation: scaleUp 4s ease-in-out infinite;
+            &.two{
+                height: 366px;
+                width: 366px;
+                animation-delay: .5s;
+            }
+            &.three{
+                width: 514px;
+                height: 514px;
+                animation-delay: 1s;
+            }
+        }
+        .bg-shape{
+            position: absolute;
+            z-index: 1;
+            &.one{
+                left: 0;
+                bottom: 0;
+            }
+            &.two{
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+    &.saas-landing{
+        position: relative;
+        z-index: 1;
+        background: linear-gradient(90.14deg, #050D20 -0.26%, #615EFC 144.24%);
+        .round{
+            position: absolute;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 50%;
+            border: 1px solid rgba(233, 243, 255, 0.05);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 202px;
+            height: 202px;
+            animation: scaleUp 4s ease-in-out infinite;
+            &.two{
+                height: 366px;
+                width: 366px;
+                animation-delay: .5s;
+            }
+            &.three{
+                width: 514px;
+                height: 514px;
+                animation-delay: 1s;
+            }
+        }
+        .bg-shape{
+            position: absolute;
+            z-index: 1;
+            &.one{
+                left: 0;
+                bottom: 0;
+            }
+            &.two{
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+}
+
+.rts-cta-main-wrapper-machine{
+    padding: 76px;
+    background-image: url(../images/cta/04.webp);
+    text-align: center;
+    .title{
+        font-size: 48px;
+        color: #fff;
+        margin-bottom: 35px;
+    }
+    .rts-btn{
+        margin: auto;
+    }
+}
+
+
+.demo-data-science .rts-call-to-action-area.demo-app-development .call-to-action-wrapper-three{
+    border-radius: 30px;
+    background: linear-gradient(90.14deg, #0039B4 -0.26%, #4685FF 144.24%);
+    .bg-shape{
+        position: absolute;
+        z-index: 1;
+        &.one{
+            left: 0;
+            bottom: 0;
+        }
+        &.two{
+            top: 0;
+            right: 0;
+        }
+    }
+}

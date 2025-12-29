@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Enter OTP | SaaS</title>
+
+<style>
+:root{
+  --primary:#000;
+  --bg:#f4f4f4;
+  --gray:#6c757d;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body{
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* MOBILE-OPTIMIZED CARD */
+.container{
+  width: 100%;
+  max-width: 380px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 40px 30px;
+  box-shadow: 0 25px 60px rgba(0,0,0,.1);
+  text-align: center;
+}
+
+h2{
+  font-size: 24px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+p{
+  color: var(--gray);
+  font-size: 14px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* OTP INPUT - Optimized for fingers */
+input[name="otp"]{
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: 2px solid #e0e0e0;
+  font-size: 24px; /* Larger font for mobile readability */
+  text-align: center;
+  letter-spacing: 10px;
+  outline: none;
+  transition: border-color .3s;
+  background: #fafafa;
+}
+
+input[name="otp"]:focus{
+  border-color: var(--primary);
+  background: #fff;
+}
+
+/* FULL WIDTH BUTTON FOR MOBILE */
+button{
+  width: 100%;
+  padding: 16px;
+  margin-top: 20px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+button:active {
+  transform: scale(0.98); /* Tactile feedback on mobile touch */
+}
+
+.loading{
+  display: none;
+  margin-top: 18px;
+  color: var(--gray);
+  font-size: 14px;
+}
+
+/* Mobile Small Screen Adjustment */
+@media (max-width: 360px) {
+  .container {
+    padding: 30px 20px;
+  }
+  h2 { font-size: 22px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Enter OTP</h2>
+  <p>We’ve sent a 6-digit verification code to your registered email address.</p>
+
+  <form id="enterOtpForm">
+    <input 
+      type="tel" 
+      name="otp" 
+      placeholder="000000" 
+      maxlength="6" 
+      pattern="[0-9]*" 
+      inputmode="numeric" 
+      required 
+      autofocus
+    >
+    <button type="submit">Verify & Proceed</button>
+  </form>
+
+  <div class="loading" id="loading">Validating code...</div>
+</div>
+
+<script>
+document.getElementById("enterOtpForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const loading = document.getElementById("loading");
+  const btn = this.querySelector("button");
+
+  btn.innerText = "Verifying...";
+  btn.style.opacity = "0.6";
+  btn.disabled = true;
+  loading.style.display = "block";
+
+  setTimeout(() => {
+    window.location.href = "reset-password.html";
+  }, 1800);
+});
+</script>
+
+</body>
+</html>

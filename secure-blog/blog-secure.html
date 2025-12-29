@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Neuraltrix AI – Secure Blog with Video Protection">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/fav.png">
+    <title>Neuraltrix AI - Secure Blog</title>
+    
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    
+    <!-- Original Styles -->
+    <link rel="stylesheet preload" href="../assets/css/plugins/fontawesome.css" as="style">
+    <link rel="stylesheet preload" href="../assets/css/plugins/swiper.css" as="style">
+    <link rel="stylesheet preload" href="../assets/css/plugins/metismenu.css" as="style">
+    <link rel="stylesheet preload" href="../assets/css/plugins/magnifying-popup.css" as="style">
+    <link rel="stylesheet preload" href="../assets/css/plugins/odometer.css" as="style">
+    <link rel="stylesheet preload" href="../assets/css/vendor/bootstrap.min.css" as="style">
+    <link rel="stylesheet preload" href="../assets/css/style.css" as="style">
+    
+    <!-- Video Security Styles -->
+    <link rel="stylesheet" href="assets/css/video-security.css">
+</head>
+
+<body class="radious-4">
+    
+    <!-- Session Timer -->
+    <div id="session-timer">
+        Demo Session Ends In: <span id="time">05:00</span>
+    </div>
+    
+    <!-- Watermark -->
+    <div id="watermark"></div>
+    
+    <!-- Blur Overlay -->
+    <div id="blurOverlay"></div>
+
+    <header class="header-one header-relative header--sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-wrapper-main">
+                        <div class="logo-area">
+                            <a href="../index.html">
+                                <img src="../assets/images/logo/nlog(1).jpeg" alt="logo" style="width: 250px; max-width: none;"></a>
+                        </div>
+                        <div class="nav-area">
+                            <ul class="">
+                                <li class="main-nav">
+                                    <a href="../index.html">Home</a>
+                                </li>
+                                <li class="main-nav">
+                                    <a href="../about.html">About</a>
+                                </li>
+                                <li class="main-nav has-dropdown mega-menu">
+                                    <a href="#">Pages</a>
+                                    <div class="rts-mega-menu">
+                                        <div class="wrapper">
+                                            <div class="container">
+                                                <div class="row g-0">
+                                                    <div class="col-lg-3">
+                                                        <ul class="mega-menu-item with-list parent-nav">
+                                                            <li><a href="../service.html"><i class="fa-sharp fa-regular fa-chevron-right"></i>Service</a></li>
+                                                            <li><a href="../service-details.html"><i class="fa-sharp fa-regular fa-chevron-right"></i>Service Details</a></li>
+                                                            <li><a href="../project-details.html"><i class="fa-sharp fa-regular fa-chevron-right"></i>Project Details</a></li>
+                                                            <li><a href="../why-choose-us.html"><i class="fa-sharp fa-regular fa-chevron-right"></i>Why Choose Us</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <ul class="mega-menu-item with-list parent-nav">
+                                                            <li><a href="../team.html"><i class="fa-sharp fa-regular fa-chevron-right"></i>Team</a></li>
+                                                            <li><a href="../team-single.html"><i class="fa-sharp fa-regular fa-chevron-right"></i>Team Single</a></li>
+                                                            <li><a href="blog-secure.html"><i class="fa-sharp fa-regular fa-chevron-right"></i>Blog</a></li>
+                                                            <li><a href="blog-details-secure.html"><i class="fa-sharp fa-regular fa-chevron-right"></i>Blog Details</a></li>
+                                                            <li><a href="../partner.html"><i class="fa-sharp fa-regular fa-chevron-right"></i>Partner</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <ul class="mega-menu-item with-list parent-nav">
+                                                            <li><a href="../industry.html"><i class="fa-sharp fa-regular fa-chevron-right"></i>Industry</a></li>
+                                                            <li><a href="../faq.html"><i class="fa-sharp fa-regular fa-chevron-right"></i>FAQ'S</a></li>
+                                                            <li><a href="../contact.html"><i class="fa-sharp fa-regular fa-chevron-right"></i>Contact</a></li>
+                                                            <li><a href="../career.html"><i class="fa-sharp fa-regular fa-chevron-right"></i>Career</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <ul class="mega-menu-item with-list parent-nav">
+                                                            <li><a href="../career-single.html"><i class="fa-sharp fa-regular fa-chevron-right"></i>Career Single</a></li>
+                                                            <li><a href="../award.html"><i class="fa-sharp fa-regular fa-chevron-right"></i>Award</a></li>
+                                                            <li><a href="../consultation.html"><i class="fa-sharp fa-regular fa-chevron-right"></i>Consultation</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="main-nav has-dropdown project-a-after">
+                                    <a href="#">Blog</a>
+                                    <ul class="submenu parent-nav">
+                                        <li><a href="blog-secure.html">Blog</a></li>
+                                        <li><a href="blog-details-secure.html">Blog Details</a></li>
+                                    </ul>
+                                </li>
+                                <li class="main-nav">
+                                    <a href="../contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="button-wrapper-flex">
+                            <div class="button-wrapper-flex">
+                                <a href="../saas-auth-backend/public/login.html" class="rts-btn btn-primary">Get Start</a>
+                                <div class="menu-btn-toggle white">
+                                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
+                                        <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
+                                        <rect width="20" height="2" fill="#1F1F25"></rect>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="rts-service-details-breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-area">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><i class="fa fa-chevron-right"></i></li>
+                            <li><a href="#" class="active">Blog</a></li>
+                        </ul>
+                        <h1 class="title rts-text-anime-style-1">Secure Blog</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog List Area -->
+    <div class="rts-blog-list-area rts-section-gapBottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8">
+                    <div class="rts-blog-list-wrapper">
+                        <div class="single-blog-style-one">
+                            <a href="blog-details-secure.html" class="thumbnail-blog">
+                                <img src="../assets/images/blog/01.webp" alt="blog">
+                            </a>
+                            <div class="inner-content-blog">
+                                <span>Development</span>
+                                <a href="blog-details-secure.html">
+                                    <h5 class="title">
+                                        WordPress vs Storyblok: Which is the best CMS for fast-growing companies?
+                                    </h5>
+                                </a>
+                                <a href="blog-details-secure.html" class="btn-line"><span>Learn More</span> <i class="fa-solid fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="single-blog-style-one">
+                            <a href="blog-details-secure.html" class="thumbnail-blog">
+                                <img src="../assets/images/blog/02.webp" alt="blog">
+                            </a>
+                            <div class="inner-content-blog">
+                                <span>Technology</span>
+                                <a href="blog-details-secure.html">
+                                    <h5 class="title">
+                                        How we reached an international audience using Smartling and Storyblok
+                                    </h5>
+                                </a>
+                                <a href="blog-details-secure.html" class="btn-line"><span>Learn More</span> <i class="fa-solid fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="single-blog-style-one">
+                            <a href="blog-details-secure.html" class="thumbnail-blog">
+                                <img src="../assets/images/blog/03.webp" alt="blog">
+                            </a>
+                            <div class="inner-content-blog">
+                                <span>IT Company</span>
+                                <a href="blog-details-secure.html">
+                                    <h5 class="title">
+                                        Website Internationalization vs Localization: How to Benefit With a Headless CMS
+                                    </h5>
+                                </a>
+                                <a href="blog-details-secure.html" class="btn-line"><span>Learn More</span> <i class="fa-solid fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="single-blog-style-one">
+                            <a href="blog-details-secure.html" class="thumbnail-blog">
+                                <img src="../assets/images/blog/04.webp" alt="blog">
+                            </a>
+                            <div class="inner-content-blog">
+                                <span>Development</span>
+                                <a href="blog-details-secure.html">
+                                    <h5 class="title">
+                                        The Power of Content Marketing: How to Engage and Convert Audiences
+                                    </h5>
+                                </a>
+                                <a href="blog-details-secure.html" class="btn-line"><span>Learn More</span> <i class="fa-solid fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-12 col-sm-12 col-12 pl--50 pl_sm--10 pl_md--10 mt_md--50 pt_sm--50">
+                    <!-- Sidebar -->
+                    <div class="rts-single-wized search">
+                        <div class="wized-header">
+                            <h5 class="title">Search Here</h5>
+                        </div>
+                        <div class="wized-body">
+                            <div class="rts-search-wrapper">
+                                <input class="Search" type="text" placeholder="Enter Keyword">
+                                <button><i class="fal fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rts-single-wized Categories">
+                        <div class="wized-header">
+                            <h5 class="title">Categories</h5>
+                        </div>
+                        <div class="wized-body">
+                            <ul class="single-categories">
+                                <li><a href="blog-details-secure.html">Business Solution <i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a href="blog-details-secure.html">Strategy Growth<i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a href="blog-details-secure.html">Finance Solution<i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a href="blog-details-secure.html">Investment Policy<i class="far fa-long-arrow-right"></i></a></li>
+                                <li><a href="blog-details-secure.html">Tax Management<i class="far fa-long-arrow-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="rts-footer-one pt--50 bg_dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="call-to-action-area-top-footer-three">
+                        <div class="left-area">
+                            <span>Want to receive news and updates?</span>
+                        </div>
+                        <div class="right-area">
+                            <form action="#">
+                                <input type="text" placeholder="Enter your email...">
+                                <button class="rts-btn btn-primary" type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container pb--80">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="left-wiget">
+                        <a class="logo" href="../index.html">
+                            <img src="../assets/images/logo/nlogo.png" alt="logo">
+                        </a>
+                        <p class="disc">
+                            We provide a wide range of customized solutions designed to meet the unique challenges of your business.
+                        </p>
+                        <ul class="social-wrapper">
+                            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="offset-lg-1 col-lg-8 mt_md--50 mt_sm--50">
+                    <div class="footer-wized-wrapper">
+                        <div class="single">
+                            <h6 class="title">Company</h6>
+                            <ul>
+                                <li><a href="../about.html">About Us</a></li>
+                                <li><a href="../career.html">Careers</a></li>
+                                <li><a href="../partner.html">Our Client</a></li>
+                                <li><a href="blog-secure.html">News</a></li>
+                                <li><a href="../contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright-1">
+                            <p class="disc">
+                                Copyright <script>document.write(new Date().getFullYear())</script>. All Rights Reserved.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script defer src="../assets/js/plugins/jquery.js"></script>
+    <script defer src="../assets/js/plugins/jquery-appear.js"></script>
+    <script defer src="../assets/js/plugins/odometer.js"></script>
+    <script defer src="../assets/js/plugins/gsap.js"></script>
+    <script defer src="../assets/js/plugins/split-text.js"></script>
+    <script defer src="../assets/js/plugins/scroll-trigger.js"></script>
+    <script defer src="../assets/js/plugins/smooth-scroll.js"></script>
+    <script defer src="../assets/js/plugins/metismenu.js"></script>
+    <script defer src="../assets/js/plugins/popup.js"></script>
+    <script defer src="../assets/js/plugins/contact.form.js"></script>
+    <script defer src="../assets/js/vendor/bootstrap.min.js"></script>
+    <script defer src="../assets/js/plugins/swiper.js"></script>
+    <script defer src="../assets/js/main.js"></script>
+    
+    <!-- Video Security Script -->
+    <script src="assets/js/video-security.js"></script>
+</body>
+</html>
+

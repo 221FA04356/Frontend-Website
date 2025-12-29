@@ -1,0 +1,72 @@
+.accordion-faq-one{
+    .accordion-item{
+        border: none;
+        border-bottom: 1px solid #DBE7FF;
+        .accordion-header{
+            border: none;
+            box-shadow: none;
+            .accordion-button{
+                box-shadow: none;
+                border: none;
+                background: transparent;
+                font-size: 16px;
+                color: #050D20;
+                font-weight: 500;
+                padding: 18px 0;
+            }
+        }
+        .accordion-body{
+            padding: 5px 0;
+            padding-bottom: 20px;
+        }
+    }
+}
+.accordon-pricing-wrapper-three{
+    max-width: 461px;
+    @media #{$mdsm-layout} {
+        max-width: 100%;
+    }
+    .accordion-item{
+        border: none;
+        border-bottom: 1px solid #D3D6EF;
+        .accordion-header{
+            border: none;
+            box-shadow: none;
+            .accordion-button{
+                box-shadow: none;
+                border: none;
+                background: transparent;
+                font-size: 16px;
+                color: #050D20;
+                font-weight: 500;
+                padding: 18px 0;
+                position: relative;
+                &::after{
+                    position: absolute;
+                    background-image: none;
+                    content: "\f056";
+                    font-size: 20px;
+                    color: #050D20;
+                    font-weight: 500;
+                    margin-left: 10px;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                    line-height: 1;
+                    font-family: "Font Awesome 6 Pro";
+                    width: unset;
+                    height: unset;
+                }
+                &.collapsed{
+                    &::after{
+                        content: "\f055";
+                    }
+                }
+            }
+        }
+        .accordion-body{
+            padding: 5px 0;
+            padding-bottom: 20px;
+        }
+    }
+}

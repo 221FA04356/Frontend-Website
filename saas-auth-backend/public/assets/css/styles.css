@@ -1,0 +1,25 @@
+/* ================= SAAS LOADER ================= */
+.saas-loader {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.15); /* keeps page visible */
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.saas-loader.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.saas-loader video {
+    width: 260px;
+    max-width: 70%;
+    background: transparent;
+}

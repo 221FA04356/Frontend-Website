@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register | SaaS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+/* BACKGROUND VIDEO */
+.bg-video{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100dvh;
+  object-fit:cover;
+  z-index:-2;
+}
+
+/* DARK OVERLAY */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  z-index:-1;
+}
+
+/* BODY */
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+/* DESKTOP CARD */
+.container{
+  max-width:900px;
+  width:100%;
+  background:white;
+  border-radius:26px;
+  padding:60px 70px;
+  box-shadow:0 30px 80px rgba(0,0,0,.45);
+}
+
+h2{
+  text-align:center;
+  margin-bottom:28px;
+}
+
+/* INPUTS */
+input{
+  width:100%;
+  padding:14px;
+  margin-bottom:14px;
+  border-radius:12px;
+  border:1px solid #ddd;
+  font-size:15px;
+}
+
+/* ROW SYSTEM */
+.row{
+  display:flex;
+  gap:12px;
+}
+
+.row input{
+  flex:1;
+}
+
+/* BUTTON */
+button{
+  width:100%;
+  padding:16px;
+  background:black;
+  color:white;
+  border:none;
+  border-radius:14px;
+  font-size:16px;
+  margin-top:10px;
+  cursor:pointer;
+}
+
+/* FOOTER TEXT */
+p{
+  text-align:center;
+  margin-top:22px;
+}
+
+/* ================= MOBILE VIEW ================= */
+.mobile-wrapper{
+  display:none;
+}
+
+@media (max-width:768px){
+  .container{
+    display:none;
+  }
+
+  .mobile-wrapper{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    max-width:420px;
+    background:white;
+    border-radius:28px;
+    padding:30px 22px;
+    box-shadow:0 30px 80px rgba(0,0,0,.45);
+  }
+
+  .mobile-wrapper h3{
+    text-align:center;
+    font-size:24px;
+    margin-bottom:22px;
+  }
+
+  .mobile-wrapper .row{
+    display:flex;
+    gap:10px;
+    margin-bottom:14px;
+  }
+
+  .mobile-wrapper input{
+    flex:1;
+    padding:14px;
+    border-radius:14px;
+    border:1px solid #ddd;
+    font-size:14px;
+  }
+
+  .mobile-wrapper input:disabled{
+    background:#f2f2f2;
+  }
+
+  .mobile-wrapper button{
+    width:100%;
+    padding:16px;
+    background:black;
+    color:white;
+    border:none;
+    border-radius:16px;
+    font-size:16px;
+    margin-top:10px;
+  }
+
+  .mobile-wrapper p{
+    text-align:center;
+    margin-top:18px;
+    font-size:14px;
+  }
+
+  .mobile-wrapper a{
+    color:#0066ff;
+    font-weight:600;
+    text-decoration:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND VIDEO -->
+<video class="bg-video" autoplay muted loop playsinline>
+  <source src="assets/233487_small.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<!-- ================= DESKTOP REGISTER ================= -->
+<div class="container">
+  <h2>Create Account</h2>
+
+  <form id="registerForm">
+
+    <div class="row">
+      <input required placeholder="First Name">
+      <input required placeholder="Last Name">
+    </div>
+
+    <div class="row">
+      <input type="email" required placeholder="Email">
+      <input required placeholder="OTP">
+    </div>
+
+    <div class="row">
+      <input value="IN +91" disabled>
+      <input required placeholder="Phone Number">
+    </div>
+
+    <div class="row">
+      <input id="password" type="password" required placeholder="Password">
+      <input id="confirmPassword" type="password" required placeholder="Confirm Password">
+    </div>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <p>
+    Already have an account?
+    <a href="javascript:void(0)"
+       onclick="showLoaderAndRedirect('login.html', 5000, 'Returning to login...')">
+      Login
+    </a>
+  </p>
+</div>
+
+<!-- ================= MOBILE REGISTER ================= -->
+<div class="mobile-wrapper">
+  <h3>Create Account</h3>
+
+  <form id="mobileRegisterForm">
+
+    <div class="row">
+      <input placeholder="First Name" required>
+      <input placeholder="Last Name" required>
+    </div>
+
+    <div class="row">
+      <input type="email" placeholder="Email" required>
+      <input placeholder="OTP" required>
+    </div>
+
+    <div class="row">
+      <input value="IN +91" disabled>
+      <input placeholder="Phone Number" required>
+    </div>
+
+    <div class="row">
+      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="Confirm Password" required>
+    </div>
+
+    <button type="submit">Register</button>
+
+    <p>
+      Already have an account?
+      <a href="login.html">Login</a>
+    </p>
+  </form>
+</div>
+
+<!-- LOADER FILES -->
+<link rel="stylesheet" href="assets/loader/loader.css">
+<script src="assets/loader/loader.js"></script>
+
+<!-- LOADER + FORM LOGIC -->
+<script>
+fetch("assets/loader/loader.html")
+  .then(res => res.text())
+  .then(html => document.body.insertAdjacentHTML("beforeend", html));
+
+document.getElementById("registerForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const pass = document.getElementById("password").value;
+  const confirm = document.getElementById("confirmPassword").value;
+
+  if(pass !== confirm){
+    alert("Passwords do not match");
+    return;
+  }
+
+  showLoaderAndRedirect("login.html", 6000, "Finalizing registration...");
+});
+
+document.getElementById("mobileRegisterForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  showLoaderAndRedirect("login.html", 6000, "Finalizing registration...");
+});
+</script>
+
+</body>
+</html>

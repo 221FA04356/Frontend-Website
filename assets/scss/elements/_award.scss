@@ -1,0 +1,33 @@
+.award-area-digital-agency{
+    .single-award{
+        display: flex;
+        align-self: center;
+        justify-content: space-between;
+        padding: 20px 0;
+        border-bottom: 1px solid #DFDBF9;
+        @media #{$large-mobile} {
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        p{
+            font-weight: 500;
+            font-size: 16px;
+            color: #0C1018;
+            margin: 0;
+        }
+    }
+}
+
+.title-area-between.in-digital-agency{
+    .right-area{
+        a.btn-line{
+            list-style: none;
+            padding: 7px 18px;
+            border: 1px solid #DFDBF9;
+            border-radius: 100px;
+            &::after{
+                display: none;
+            }
+        }
+    }
+}

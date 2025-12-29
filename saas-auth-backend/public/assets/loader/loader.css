@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FULL SCREEN OVERLAY */
+#page-loader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #0b0f1a, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+/* ACTIVE STATE */
+#page-loader.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* CONTENT */
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* VIDEO */
+#page-loader video {
+  width: 220px;
+  max-width: 70vw;
+}
+
+/* TEXT */
+#loader-text {
+  color: #9ae6ff;
+  font-size: 15px;
+  font-family: "Segoe UI", sans-serif;
+  letter-spacing: 0.8px;
+  opacity: 0.85;
+}

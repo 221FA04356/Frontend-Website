@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | SaaS</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+html, body{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+/* BACKGROUND VIDEO */
+.bg-video{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100dvh;
+  object-fit:cover;
+  z-index:-2;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  z-index:-1;
+}
+
+.page{
+  min-height:100dvh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.login-card{
+  width:100%;
+  max-width:480px;
+  background:white;
+  border-radius:24px;
+  padding:45px;
+  box-shadow:0 30px 80px rgba(0,0,0,.45);
+}
+
+.login-card h2{ font-size:24px; margin-bottom:4px; }
+.login-card p{ color:gray; margin-bottom:18px; font-size:14px; }
+
+.login-card form{ display:flex; flex-direction:column; }
+
+.login-card input{
+  padding:16px;
+  margin-bottom:14px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-size:16px;
+}
+
+.login-btn{
+  padding:14px;
+  background:black;
+  color:white;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  margin-bottom:18px;
+}
+
+.actions{ display:flex; gap:12px; }
+
+.actions button{
+  flex:1;
+  padding:10px;
+  background:white;
+  border:2px solid #ff4d1c;
+  color:#ff4d1c;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<video class="bg-video" autoplay muted loop playsinline>
+  <source src="assets/233487_small.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<div class="page">
+  <div class="login-card">
+    <h2>Login</h2>
+    <p>Access your SaaS account</p>
+
+    <form id="loginForm">
+      <input id="user" type="text" placeholder="Email / Username" required>
+      <input id="pass" type="password" placeholder="Password" required>
+      <button class="login-btn" type="submit">Login</button>
+    </form>
+
+    <div class="actions">
+      <button onclick="showLoaderAndRedirect('register.html', 6000, 'Preparing registration...')">Register</button>
+      <button onclick="showLoaderAndRedirect('forgot-password.html', 6000, 'Verifying identity...')">Forgot</button>
+    </div>
+  </div>
+</div>
+
+<!-- LOADER -->
+<link rel="stylesheet" href="assets/loader/loader.css">
+<script src="assets/loader/loader.js"></script>
+
+<script>
+fetch("assets/loader/loader.html")
+  .then(res => res.text())
+  .then(html => document.body.insertAdjacentHTML("beforeend", html));
+
+document.getElementById("loginForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const user = document.getElementById("user").value.trim();
+  const pass = document.getElementById("pass").value.trim();
+
+  if(!user || !pass){
+    alert("Please enter username and password");
+    return;
+  }
+
+  showLoaderAndRedirect("../../index-eleven.html", 7000, "Authenticating & securing your session...");
+});
+</script>
+
+</body>
+</html>
